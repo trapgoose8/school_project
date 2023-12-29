@@ -9,12 +9,12 @@ const Results = () => {
                 <div className={styles.winnerBlockInner}>
                     <Image
                         className={styles.img}
-                        src={"/vote1.png"}
+                        src={"/vote2.png"}
                         alt=""
                         width={600}
                         height={700}
                     />
-                    <p className={styles.name}>Березкин Дмитрий Петрович</p>
+                    <p className={styles.name}>Хиневич Максим Дмитриевич</p>
                 </div>
             </div>
             <div className={styles.winnerLine}>
