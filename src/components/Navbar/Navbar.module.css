@@ -1,0 +1,250 @@
+.container {
+    background-color: #fff;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 10px 20px 40px;
+    width: 100%;
+
+    border-bottom: 1px solid #000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links {
+    
+    display: flex;
+    gap: 70px;
+}
+
+.authLinks {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.link {
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.regLink {
+
+    display: flex;
+    align-items: center;
+
+    padding: 6px 12px;
+    border: 1px #000 solid;
+    border-radius: 17px;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 24px;
+
+    color: #000;
+    background-color: #fff;
+
+    transition: all 0.15s linear;
+}
+
+.regLink:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+
+
+
+.fullname {
+    text-align: end;
+    font-weight: 500;
+}
+
+.burgerLinksAll {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 20px 20px;
+
+    z-index: 1000;
+    background-color: #fff;
+
+    flex-direction: column;
+    gap: 10px;
+}
+
+.linksBurger {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    align-items: flex-end;
+}
+
+.authLinksBurger {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.burger {
+    padding: 8px 0;
+    cursor: pointer;
+    display: none
+}
+
+.burgerInner {
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background: #000;
+}
+
+.burgerInner::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transform: translateY(7px);
+}
+
+.burgerInner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transform: translateY(-7px);
+}
+
+.signout {
+    border: 1px #000 solid;
+    border-radius: 17px;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 18px;
+    padding: 5px 5px;
+}
+
+.signout:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+@media (max-width: 1000px) {
+    .links {
+        position: static;
+        transform: translate(0, 0);
+    }
+}
+
+
+/* MEDIA */
+
+@media (max-width: 1220px) {
+    .links {
+        gap: 40px;
+    }
+    .authLinks {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .link {
+        font-size: 20px;
+    }
+
+    .regLink {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .link {
+        font-size: 18px;
+    }
+
+    .regLink {
+        font-size: 18px;
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 850px) {
+    .links {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 790px) {
+
+    .container {
+        padding: 10px 20px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .authLinks {
+        display: none;
+    }
+
+    .logo {
+        display: block;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    
+}
+
+@media (max-width: 717px) {
+    .link {
+        font-size: 16px;
+    }
+
+    .fullname {
+        font-size: 16px;
+    }
+
+    .signout {
+        font-size: 16px;
+    }
+
+    .regLink {
+        font-size: 16px;
+    }
+}
+
+

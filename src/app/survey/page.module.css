@@ -1,0 +1,189 @@
+.container {
+    padding: 100px 20px 100px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+
+.title {
+    font-family: "Playfair Display", serif;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #1C3887;
+
+    position: relative;
+
+    text-transform: uppercase;
+}
+
+.title::after {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+
+    content: "школа 2098";
+
+    font-family: "Inter", serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    color: #B53439;
+}
+
+.containerInner {
+    display: flex;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    row-gap: 50px;
+}
+
+.surveyCard {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 30px;
+
+}
+
+.img {
+    width: 100%;
+    height: auto;
+}
+
+.nameBlock {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+.number {
+    font-size: 24px;
+    color: #B53439;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.opportunity {
+    display: flex;
+    gap: 8px;
+}
+
+
+.button {
+    width: 100%;
+    
+    border: 1px solid #000;
+    background-color: #fff;
+    padding: 10px 0;
+    border-radius: 17px;
+    cursor: pointer;
+    font-size: 24px;
+
+    transition: all 0.15s linear;
+}
+
+.button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+@media (max-width: 1000px) {
+    .title {
+        font-size: 80px;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .title {
+        font-size: 60px;
+    }
+
+    .title::after {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 717px) {
+
+    .container {
+        padding-top: 80px;
+        padding-bottom: 60px;
+        gap: 30px;
+    }
+
+    .title {
+        font-size: 46px;
+    }
+
+    .containerInner {
+        flex-direction: column;
+    }
+
+    .surveyCard {
+        width: 100%;
+    }
+
+    .number {
+        font-size: 18px;
+    }
+
+    .button {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 414px) {
+
+    .container {
+        padding-bottom: 40px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .title::after {
+        font-size: 14px;
+    }
+
+    .number {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 7px 0;
+    }
+}

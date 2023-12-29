@@ -1,0 +1,437 @@
+.main {
+    
+    padding-top: 100px;
+    
+}
+
+.intro {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 0 20px 100px 20px;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    text-align: left;
+    color: #1C3887;
+    font-weight: 400;
+    line-height: 0.85;
+  
+
+    position: relative;
+}
+
+.title::after {
+    content: "2098";
+    display: block;
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: #B53439;
+    line-height: 1.1;
+}
+
+.mainImg {
+    width: 100%;
+    border: 3.5px #000 solid;
+}
+
+
+.reasons {
+    display: flex;
+    flex-direction: column;
+
+    gap: 50px;
+    padding: 50px 20px;
+
+    background-color: #0D0631;
+    
+}
+
+.reasonsTitle {
+    font-size: 48px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.1;
+    width: 55%;
+}
+
+.reason {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reasonSubtitle {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 400;
+
+    
+    max-width: 10%;
+    width: 100%;
+    line-height: 1.1;
+}
+
+
+.reasonInfo {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 200;
+
+    max-width: 40%;
+    width: 100%;
+
+    line-height: 1.1;
+}
+
+.reasonNumber {
+    font-size: 24px;
+    font-weight: 400;
+    color: #B53439;
+}
+
+.reasonsImages {
+    display: flex;
+    justify-content: space-between;
+}
+
+.conclusion {
+    padding: 75px 20px 20px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.conclusionImage {
+    max-width: 100%;
+    align-self: flex-end;
+}
+
+
+.conclusionInfo {
+    display: flex;
+
+}
+
+.conclusionTitle {
+    vertical-align: top;
+
+    max-width: 50%;
+    width: 100%;
+
+    font-size: 48px;
+    font-weight: 300;
+    color: #000;
+
+    padding-right: 40%;
+
+    position: relative;
+
+    line-height: 1.1;
+}
+
+.conclusionTitle::after {
+    content: "";
+    display: block;
+
+    width: 285px;
+    height: 1px;
+    background-color: #000;
+
+    position: absolute;
+    top: 8px;
+    right: 20%;
+}
+
+.conclusionUtils {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+    max-width: 50%;
+    width: 100%;
+}
+
+.conclusionText {
+    font-size: 24px;
+    max-width: 280px;
+    font-weight: 200;
+    width: 100%;
+    line-height: 1.1;
+}
+
+.conclusionImageLast {
+    max-width: 100%;
+}
+
+
+/* MEDIA */
+
+
+
+@media (max-width: 1220px) {
+    .title {
+        font-size: 80px;
+        
+    }
+
+    .reasonImageFirst {
+        width: 600px;
+    }
+
+    .reasonImageSecond {
+        width: 350px;
+    }
+
+    .conclusionTitle::after {
+        width: 200px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .title {
+        font-size: 64px;
+        
+    }
+
+    .mainImg {
+        height: 450px;
+    }
+
+    .reasonsTitle {
+        font-size: 36px;
+    }
+
+    .reasonSubtitle {
+        font-size: 20px;
+    }
+
+    .reasonInfo {
+        font-size: 20px;
+    }
+
+    .reasonNumber {
+        font-size: 20px;
+    }
+
+    .reasonImageFirst {
+        width: 500px;
+    }
+
+    .reasonImageSecond {
+        width: 350px;
+    }
+
+    .conclusionTitle::after {
+        width: 150px;
+    }
+}
+
+@media (max-width: 900px) {
+    .reasonImageFirst {
+        width: 400px;
+    }
+
+    .reasonImageSecond {
+        width: 300px;
+    }
+
+    .conclusionTitle::after {
+        width: 100px;
+    }
+}
+
+@media (max-width: 770px) {
+    .reasonsImages {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .reasonImageFirst {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .reasonImageSecond {
+        max-width: 100%;
+        align-self: flex-end;
+        width: 350px;
+    }
+
+    
+}
+
+@media (max-width: 717px) {
+    
+    .intro {
+        padding: 0 20px 100px 20px;
+    }
+
+    .title {
+        font-size: 32px;
+        
+    }
+
+    .title::after {
+        font-size: 18px;
+    }
+
+    .mainImg {
+        height: 350px;
+    }
+
+    .reasonsTitle {
+        font-size: 24px;
+        width: 80%;
+    }
+
+    .reason {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .reasonSubtitle {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+
+    .reasonInfo {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .reasonNumber {
+        font-size: 16px;
+    }
+
+    .reasonImageFirst {
+        width: 500px;
+    }
+
+    .reasonImageSecond {
+        width: 300px;
+    }
+
+
+    .conclusionImage {
+        height: 350px;
+    }
+
+    .conclusionTitle {
+        font-size: 24px;
+    }
+
+    .conclusionTitle::after {
+        width: 50px;
+    }
+
+    .conclusionText {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .title {
+        font-size: 24px;
+    }
+
+    .title::after {
+        font-size: 14px;
+    }
+
+    .reasonImageFirst {
+        width: 400px;
+    }
+
+    .reasonImageSecond {
+        width: 250px;
+    }
+
+    .conclusionImage {
+        height: 250px;
+
+    }
+
+    .conclusionTitle::after {
+        display: none;
+    }
+
+    .conclusionImageLast {
+        height: 150px;
+    }
+}
+
+@media (max-width: 414px) {
+
+    .intro {
+        padding: 0 20px 50px 20px;
+    }
+
+    .mainImg {
+        height: 250px;
+    }
+
+    .reasonsTitle {
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .reasonImageFirst {
+        width: 100%;
+        max-width: 100%;
+        height: 180px;
+    }
+
+    .reasonImageSecond {
+        width: 100%;
+        max-width: 100%;
+        height: 180px;
+    }
+
+    .conclusionImage {
+        height: 200px;
+        
+    }
+
+    .conclusion {
+        gap: 40px;
+    }
+
+    .conclusionInfo {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .conclusionUtils {
+        align-self: flex-end;
+        max-width: 100%;
+    }
+
+    .conclusionText {
+        text-align: right;
+        max-width: 100%;
+        padding-left: 100px;
+    }
+
+    .conclusionTitle {
+        max-width: 100%;
+    }
+
+    .conclusionImageLast {
+        max-width: 250px;
+    }
+    
+
+}

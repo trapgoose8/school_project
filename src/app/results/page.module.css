@@ -1,0 +1,154 @@
+.container {
+    padding-top: 100px;
+    padding-bottom: 80px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.title {
+    padding: 0 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #1C3887;
+
+    position: relative;
+
+    text-transform: uppercase;
+}
+
+.title::after {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 20px;
+
+    content: "школа 2098";
+
+    font-family: "Inter", serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    color: #B53439;
+}
+
+.winnerBlockInner {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.img {
+    max-width: 30%;
+    width: 100%;
+    height: auto;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.winnerLine {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    border-top: 1px #000 solid;
+    border-bottom: 1px #000 solid;
+}
+
+.win {
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 300;
+}
+
+@media (max-width: 1220px) {
+    .title {
+        font-size: 80px;
+        
+    }
+
+    .name {
+        font-size: 30px;
+    };
+
+    .win {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .title {
+        font-size: 64px;
+        
+    }
+
+    .name {
+        font-size: 24px;
+    }
+    .win {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 717px) {
+
+    .container {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        gap: 30px;
+    }
+
+    .title {
+        font-size: 32px;
+        
+    }
+
+    .title::after {
+        font-size: 14px;
+    }
+
+    .img {
+        max-width: 45%;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .win {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 414px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .title::after {
+        font-size: 12px;
+    }
+
+    .img {
+        max-width: 60%;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .win {
+        font-size: 16px;
+    }
+}

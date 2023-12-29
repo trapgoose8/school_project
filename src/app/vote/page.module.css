@@ -1,0 +1,241 @@
+.container {
+    padding: 100px 20px 100px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+}
+
+.title {
+    font-family: "Playfair Display", serif;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 0.85;
+    color: #1C3887;
+
+    position: relative;
+
+    text-transform: uppercase;
+}
+
+.title::after {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+
+    content: "01.01.24-01.05.24";
+
+    font-family: "Inter", serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    color: #B53439;
+}
+
+.candidates {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.candidate {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 30px;
+
+}
+
+.img {
+    width: 100%;
+    height: auto;
+}
+
+.nameBlock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+
+.name {
+    max-width: 70%;
+    width: 100%;
+    font-size: 36px;
+    color: #000;
+    line-height: 1.1;
+    font-weight: 300;
+}
+
+.number {
+    font-size: 24px;
+    font-weight: 500;
+    color:#B53439;
+}
+
+.needLogin {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: lowercase;
+
+
+}
+
+
+.vote {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    border-radius: 17px;
+    border: 1px #000 solid;
+
+    cursor: pointer;
+
+    font-size: 24px;
+    text-transform: lowercase;
+    transition: all 0.15s linear;
+
+}
+
+.vote:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.alreadyVoted {
+    font-weight: 400;
+}
+
+
+@media (max-width: 1000px) {
+    .title {
+        font-size: 80px;
+    }
+
+    .name {
+        font-size: 30px;
+    }
+
+    .needLogin {
+        font-size: 16px;
+    }
+
+    .alreadyVoted {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    
+    .container {
+        padding-top: 100px;
+    }
+    
+    .title {
+        font-size: 60px;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 717px) {
+
+    .container {
+        gap: 40px;
+        padding-bottom: 50px;
+    }
+
+    .title {
+        font-size: 46px;
+    }
+
+    .title::after {
+        font-size: 16px;
+    }
+
+    .candidates {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .candidate {
+        width: 100%;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+
+    .number {
+        font-size: 20px;
+    }
+
+    .img {
+        width: 80%;
+        align-self: center;
+    }
+}
+
+
+@media (max-width: 520px) {
+    .title {
+        font-size: 35px;
+    }
+
+    .title::after {
+        font-size: 14px;
+    }
+
+    .candidates {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 414px) {
+    .title {
+        font-size: 25px;
+    }
+    
+    .title::after {
+        font-size: 10px;
+    }
+
+    .candidate {
+        gap: 20px;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+
+    .number {
+        font-size: 14px;
+    }
+
+    .candidates {
+        gap: 30px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .needLogin {
+        font-size: 14px;
+    }
+
+    .alreadyVoted {
+        font-size: 14px;
+    }
+
+}

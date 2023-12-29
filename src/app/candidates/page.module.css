@@ -1,0 +1,196 @@
+.container {
+    padding: 100px 20px 100px 20px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    align-items: flex-start;
+}
+
+.title {
+    font-size: 100px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    color: #1C3887;
+    text-transform: uppercase;
+
+    position: relative;
+
+    width: 100%;
+
+    line-height: 0.85;
+}
+
+.title::after {
+    content: "школа 2098";
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+    color: #B53439;
+    display: block;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    text-transform: lowercase;
+}
+
+.candidates {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    align-items: flex-start;
+    width: 100%;
+}
+
+.candidate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 60px;
+}
+
+.candidate:nth-of-type(2) {
+    align-items: flex-end;
+}
+
+.candidate:nth-of-type(2) .name {
+    text-align: right;
+}
+
+.img {
+    width: 55%;
+    height: auto;
+
+    border: 5px #251271 solid;
+}
+
+.nameBlock {
+    display: flex;
+    width: 100%;
+
+    padding: 50px 0;
+
+    border-top: 1px #000 solid;
+    border-bottom: 1px #000 solid;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    text-align: left;
+
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    max-width: 60%;
+    width: 100%;
+
+}
+
+.number {
+    font-size: 24px;
+    font-weight: 500;
+    color: #B53439;
+}
+
+@media (max-width: 800px) {
+    
+    .container {
+        padding-top: 100px;
+    }
+    
+    .title {
+        font-size: 80px;
+    }
+
+    .name {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 717px) {
+
+    .container {
+        gap: 40px;
+        padding-bottom: 50px;
+    }
+
+    .title {
+        font-size: 60px;
+    }
+
+    .title::after {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 32px;
+
+        max-width: 70%;
+    }
+
+    .nameBlock {
+        padding: 30px 0;
+    }
+
+    .number {
+        font-size: 20px;
+    }
+
+    .img {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 520px) {
+    .title {
+        font-size: 40px;
+    }
+
+    .title::after {
+        font-size: 14px;
+    }
+
+    .candidates {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 414px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .candidate {
+        gap: 30px;
+    }
+
+    .name {
+        font-size: 22px;
+        max-width: 90%;
+        width: 100%;
+    }
+
+    .nameBlock {
+        padding: 15px 0;
+    }
+
+    .number {
+        font-size: 14px;
+    }
+
+    .candidates {
+        gap: 30px;
+    }
+}
