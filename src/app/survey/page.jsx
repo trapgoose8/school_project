@@ -81,7 +81,7 @@ const Quiz = () => {
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[0] = "05.09.2024";
+                                        prev[0] = "12.01.2024";
                                         return prev;
                                     });
                                 }}
@@ -89,14 +89,14 @@ const Quiz = () => {
                                 value={"date2"}
                                 name="quiz1"
                             />
-                            <label>05.09.2024</label>
+                            <label>12.01.2024</label>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[0] = "10.01.2024";
+                                        prev[0] = "19.01.2024";
                                         return prev;
                                     });
                                 }}
@@ -104,7 +104,7 @@ const Quiz = () => {
                                 value={"date3"}
                                 name="quiz1"
                             />
-                            <label>10.01.2024</label>
+                            <label>19.01.2024</label>
                         </div>
                     </div>
                     {status === "authenticated" ? (
@@ -155,7 +155,7 @@ const Quiz = () => {
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[1] = "01.01.2024";
+                                        prev[1] = "12.01.2024";
                                         return prev;
                                     });
                                 }}
@@ -163,14 +163,14 @@ const Quiz = () => {
                                 value={"date2"}
                                 name="quiz2"
                             />
-                            <label>01.01.2024</label>
+                            <label>12.01.2024</label>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[1] = "10.01.2024";
+                                        prev[1] = "19.01.2024";
                                         return prev;
                                     });
                                 }}
@@ -178,7 +178,7 @@ const Quiz = () => {
                                 value={"date3"}
                                 name="quiz2"
                             />
-                            <label>10.01.2024</label>
+                            <label>19.01.2024</label>
                         </div>
                     </div>
                     {status === "authenticated" ? (
@@ -229,7 +229,7 @@ const Quiz = () => {
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[2] = "01.01.2024";
+                                        prev[2] = "12.01.2024";
                                         return prev;
                                     });
                                 }}
@@ -237,14 +237,14 @@ const Quiz = () => {
                                 value={"date2"}
                                 name="quiz3"
                             />
-                            <label>01.01.2024</label>
+                            <label>12.01.2024</label>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[2] = "10.01.2024";
+                                        prev[2] = "19.01.2024";
                                         return prev;
                                     });
                                 }}
@@ -252,7 +252,7 @@ const Quiz = () => {
                                 value={"date3"}
                                 name="quiz3"
                             />
-                            <label>10.01.2024</label>
+                            <label>19.01.2024</label>
                         </div>
                     </div>
                     {status === "authenticated" ? (
@@ -302,7 +302,7 @@ const Quiz = () => {
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[3] = "01.01.2024";
+                                        prev[3] = "12.01.2024";
                                         return prev;
                                     });
                                 }}
@@ -310,14 +310,14 @@ const Quiz = () => {
                                 value={"date2"}
                                 name="quiz4"
                             />
-                            <label>01.01.2024</label>
+                            <label>12.01.2024</label>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[3] = "10.01.2024";
+                                        prev[3] = "19.01.2024";
                                         return prev;
                                     });
                                 }}
@@ -325,7 +325,7 @@ const Quiz = () => {
                                 value={"date3"}
                                 name="quiz4"
                             />
-                            <label>10.01.2024</label>
+                            <label>19.01.2024</label>
                         </div>
                     </div>
                     {status === "authenticated" ? (
