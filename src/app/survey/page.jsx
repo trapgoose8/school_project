@@ -81,7 +81,7 @@ const Quiz = () => {
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[0] = "01.01.2024";
+                                        prev[0] = "05.09.2024";
                                         return prev;
                                     });
                                 }}
@@ -89,7 +89,7 @@ const Quiz = () => {
                                 value={"date2"}
                                 name="quiz1"
                             />
-                            <label>01.01.2024</label>
+                            <label>05.09.2024</label>
                         </div>
                         <div className={styles.opportunity}>
                             <input
