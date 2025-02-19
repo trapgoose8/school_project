@@ -2,12 +2,20 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import { signIn, signOut } from "next-auth/react";
 
 const Quiz = () => {
     const [survey, setSurvey] = useState(["", "", "", ""]);
+
+    const [eventStats, setEventStats] = useState([
+        { total: 0, date1: 0, date2: 0, date3: 0 }, // Мероприятие 0
+        { total: 0, date1: 0, date2: 0, date3: 0 }, // Мероприятие 1
+        { total: 0, date1: 0, date2: 0, date3: 0 }, // Мероприятие 2
+        { total: 0, date1: 0, date2: 0, date3: 0 }, // Мероприятие 3
+    ]);
+
+    const dates = ["25.12.2025", "01.01.2025", "10.01.2025"]; // Пример дат
 
     const handleSurvey = async () => {
         const fullname = session.user.fullname;
@@ -34,9 +42,38 @@ const Quiz = () => {
             throw new Error(error);
         }
     };
+    useEffect(() => {
+        async function fetchSurveyData() {
+            const newStats = [...eventStats];
 
+            for (let eventIndex = 0; eventIndex < 4; eventIndex++) {
+                const resTotal = await fetch(
+                    `/api/users/survey?eventIndex=${eventIndex}`
+                );
+                if (resTotal.status === 200) {
+                    const dataTotal = await resTotal.json();
+                    newStats[eventIndex].total = dataTotal.count;
+                }
+
+                for (let date of dates) {
+                    const resDate = await fetch(
+                        `/api/users/survey?eventIndex=${eventIndex}&date=${date}`
+                    );
+                    if (resDate.status === 200) {
+                        const dataDate = await resDate.json();
+                        newStats[eventIndex][`date${dates.indexOf(date) + 1}`] =
+                            dataDate.count;
+                    }
+                }
+            }
+
+            setEventStats(newStats);
+        }
+
+        fetchSurveyData();
+    }, []);
     const { data: session, status } = useSession();
-
+    console.log(eventStats);
     return (
         <div className={styles.container}>
             <div className={styles.title}>Опросы</div>
@@ -66,7 +103,7 @@ const Quiz = () => {
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[0] = "25.12.2023";
+                                        prev[0] = "25.12.2025";
                                         return prev;
                                     });
                                 }}
@@ -74,14 +111,22 @@ const Quiz = () => {
                                 value={"date1"}
                                 name="quiz1"
                             />
-                            <label>25.12.2023</label>
+                            <label>25.12.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[0].date1 /
+                                        eventStats[0].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[0] = "12.01.2024";
+                                        prev[0] = "01.01.2025";
                                         return prev;
                                     });
                                 }}
@@ -89,14 +134,22 @@ const Quiz = () => {
                                 value={"date2"}
                                 name="quiz1"
                             />
-                            <label>12.01.2024</label>
+                            <label>01.01.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[0].date2 /
+                                        eventStats[0].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[0] = "19.01.2024";
+                                        prev[0] = "10.01.2025";
                                         return prev;
                                     });
                                 }}
@@ -104,7 +157,15 @@ const Quiz = () => {
                                 value={"date3"}
                                 name="quiz1"
                             />
-                            <label>19.01.2024</label>
+                            <label>10.01.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[0].date3 /
+                                        eventStats[0].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                     </div>
                     {status === "authenticated" ? (
@@ -140,7 +201,7 @@ const Quiz = () => {
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[1] = "25.12.2023";
+                                        prev[1] = "25.12.2025";
                                         return prev;
                                     });
                                 }}
@@ -148,14 +209,22 @@ const Quiz = () => {
                                 value={"date1"}
                                 name="quiz2"
                             />
-                            <label>25.12.2023</label>
+                            <label>25.12.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[1].date1 /
+                                        eventStats[1].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[1] = "12.01.2024";
+                                        prev[1] = "01.01.2025";
                                         return prev;
                                     });
                                 }}
@@ -163,14 +232,22 @@ const Quiz = () => {
                                 value={"date2"}
                                 name="quiz2"
                             />
-                            <label>12.01.2024</label>
+                            <label>01.01.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[1].date2 /
+                                        eventStats[1].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[1] = "19.01.2024";
+                                        prev[1] = "10.01.2025";
                                         return prev;
                                     });
                                 }}
@@ -178,7 +255,15 @@ const Quiz = () => {
                                 value={"date3"}
                                 name="quiz2"
                             />
-                            <label>19.01.2024</label>
+                            <label>10.01.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[1].date3 /
+                                        eventStats[1].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                     </div>
                     {status === "authenticated" ? (
@@ -214,7 +299,7 @@ const Quiz = () => {
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[2] = "25.12.2023";
+                                        prev[2] = "25.12.2025";
                                         return prev;
                                     });
                                 }}
@@ -222,14 +307,22 @@ const Quiz = () => {
                                 value={"date1"}
                                 name="quiz3"
                             />
-                            <label>25.12.2023</label>
+                            <label>25.12.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[2].date1 /
+                                        eventStats[2].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[2] = "12.01.2024";
+                                        prev[2] = "01.01.2025";
                                         return prev;
                                     });
                                 }}
@@ -237,14 +330,22 @@ const Quiz = () => {
                                 value={"date2"}
                                 name="quiz3"
                             />
-                            <label>12.01.2024</label>
+                            <label>01.01.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[2].date2 /
+                                        eventStats[2].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[2] = "19.01.2024";
+                                        prev[2] = "10.01.2025";
                                         return prev;
                                     });
                                 }}
@@ -252,7 +353,15 @@ const Quiz = () => {
                                 value={"date3"}
                                 name="quiz3"
                             />
-                            <label>19.01.2024</label>
+                            <label>10.01.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[2].date3 /
+                                        eventStats[2].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                     </div>
                     {status === "authenticated" ? (
@@ -287,7 +396,7 @@ const Quiz = () => {
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[3] = "25.12.2023";
+                                        prev[3] = "25.12.2025";
                                         return prev;
                                     });
                                 }}
@@ -295,14 +404,22 @@ const Quiz = () => {
                                 value={"date1"}
                                 name="quiz4"
                             />
-                            <label>25.12.2023</label>
+                            <label>25.12.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[3].date1 /
+                                        eventStats[3].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[3] = "12.01.2024";
+                                        prev[3] = "01.01.2025";
                                         return prev;
                                     });
                                 }}
@@ -310,14 +427,22 @@ const Quiz = () => {
                                 value={"date2"}
                                 name="quiz4"
                             />
-                            <label>12.01.2024</label>
+                            <label>01.01.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[3].date2 /
+                                        eventStats[3].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                         <div className={styles.opportunity}>
                             <input
                                 className={styles.radio}
                                 onClick={() => {
                                     setSurvey((prev) => {
-                                        prev[3] = "19.01.2024";
+                                        prev[3] = "10.01.2025";
                                         return prev;
                                     });
                                 }}
@@ -325,7 +450,15 @@ const Quiz = () => {
                                 value={"date3"}
                                 name="quiz4"
                             />
-                            <label>19.01.2024</label>
+                            <label>10.01.2025</label>
+                            <div className={styles.percent}>
+                                {Math.round(
+                                    (eventStats[3].date3 /
+                                        eventStats[3].total) *
+                                        100
+                                )}
+                                %
+                            </div>
                         </div>
                     </div>
                     {status === "authenticated" ? (

@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     gap: 60px;
-
 }
 
 .title {
@@ -12,7 +11,7 @@
     font-size: 100px;
     font-weight: 400;
     line-height: 0.85;
-    color: #1C3887;
+    color: #1c3887;
 
     position: relative;
 
@@ -25,14 +24,14 @@
     bottom: 0;
     right: 0;
 
-    content: "25.09.23-11.10.23";
+    content: "01.01.25-01.05.25";
 
     font-family: "Inter", serif;
 
     font-size: 20px;
     font-weight: 400;
 
-    color: #B53439;
+    color: #b53439;
 }
 
 .candidates {
@@ -48,7 +47,6 @@
     align-items: flex-start;
 
     gap: 30px;
-
 }
 
 .img {
@@ -76,7 +74,7 @@
 .number {
     font-size: 24px;
     font-weight: 500;
-    color:#B53439;
+    color: #b53439;
 }
 
 .needLogin {
@@ -84,10 +82,7 @@
     font-weight: 400;
     line-height: 1.1;
     text-transform: lowercase;
-
-
 }
-
 
 .vote {
     width: 100%;
@@ -101,7 +96,6 @@
     font-size: 24px;
     text-transform: lowercase;
     transition: all 0.15s linear;
-
 }
 
 .vote:hover {
@@ -113,6 +107,10 @@
     font-weight: 400;
 }
 
+.progressBarVote {
+    background: #1c3887;
+    height: 6px;
+}
 
 @media (max-width: 1000px) {
     .title {
@@ -133,11 +131,10 @@
 }
 
 @media (max-width: 800px) {
-    
     .container {
         padding-top: 100px;
     }
-    
+
     .title {
         font-size: 60px;
     }
@@ -148,7 +145,6 @@
 }
 
 @media (max-width: 717px) {
-
     .container {
         gap: 40px;
         padding-bottom: 50px;
@@ -175,7 +171,6 @@
         font-size: 32px;
     }
 
-
     .number {
         font-size: 20px;
     }
@@ -185,7 +180,6 @@
         align-self: center;
     }
 }
-
 
 @media (max-width: 520px) {
     .title {
@@ -205,7 +199,7 @@
     .title {
         font-size: 25px;
     }
-    
+
     .title::after {
         font-size: 10px;
     }
@@ -237,5 +231,4 @@
     .alreadyVoted {
         font-size: 14px;
     }
-
 }

@@ -20,14 +20,16 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/app/survey/page.jsx"  ],
+    "**/*.tsx",
+    "src/app/survey/page.jsx"
+  ],
   "exclude": [
     "node_modules"
   ]
